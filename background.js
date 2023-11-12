@@ -4,9 +4,11 @@ chrome.contextMenus.create({
   contexts: ["all"],
 });
 
-chrome.contextMenus.onClicked.addListener((info) => {
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+  console.log("Context menu clicked");
   const text = info.selectionText;
-
+  console.log(info);
+  console.log(tab);
   const words = text.split(/\s+/);
   const wordCount = words.length;
   const charCount = text.length;
@@ -26,9 +28,21 @@ chrome.contextMenus.onClicked.addListener((info) => {
   const avgLength = wordCount === 0 ? 0 : totalLength / wordCount;
 
   const numAverageDigits = 2;
-
-  alert(`Word Count: ${wordCount}
-Character Count: ${charCount}
-Average Word Length: ${avgLength.toFixed(numAverageDigits)}
-Longest Word Length: ${maxLength}`);
+  const displayString = `Word Count: ${wordCount}
+  Character Count: ${charCount}
+  Average Word Length: ${avgLength.toFixed(numAverageDigits)}
+  Longest Word Length: ${maxLength}`;
+  const notificationOptions = {
+    type: "basic",
+    title: "notification title",
+    message: displayString,
+    priority: 2,
+  };
+  chrome.notifications.create("Notification", {
+    type: "basic",
+    title: "notification title",
+    message: displayString,
+  });
+  chrome.contextMenus.send;
+  console.log(displayString);
 });

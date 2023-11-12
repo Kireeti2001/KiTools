@@ -4,7 +4,7 @@
     "version": "1.0",
     "author":"kireeti.nittala@gmail.com",
     "description": "Chrome Extenstions containing various features.",
-    "permissions": ["activeTab","storage","contextMenus","alarms"],
+    "permissions": ["activeTab","storage","contextMenus","alarms","notifications"],
     "action": {
       "default_popup": "popup.html",
       "default_icon": "logo.png"
