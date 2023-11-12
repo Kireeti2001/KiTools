@@ -5,6 +5,8 @@ body {
     background-color: #f8f8f8;
     margin: 0;
     padding: 0;
+    width:400px;
+    height:300px;
   }
   
   /* Styles for the individual containers */
@@ -17,7 +19,7 @@ body {
   }
   
   /* Styles for the "Generate Joke" button */
-  #jokeGenButton {
+  #jokeGenButton , #klipbordButton, #prettyJsonButton{
     padding: 12px 24px;
     background-color: #3498db;
     color: white;
@@ -27,12 +29,14 @@ body {
     transition: background-color 0.3s;
   }
   
-  #jokeGenButton:hover {
+  #jokeGenButton:hover ,#klipbordButton , #prettyJsonButton{
     background-color: #2980b9;
   }
   
   /* Styles for the "Copy Joke" and "Go Back to Menu" buttons */
   .button {
+    align-items: center;
+    text-align: center;
     padding: 12px 24px;
     background-color: #e74c3c;
     color: white;
@@ -49,7 +53,7 @@ body {
   }
   
   /* Styles for the joke container */
-  .joke-container {
+  .joke-container , .klipboard-container{
     display: none;
     background-color: #ffffff;
     border: 1px solid #bdc3c7;
@@ -73,6 +77,8 @@ body {
   
   /* Additional modern styling for buttons */
   #textCopy, #close {
+    align-content: space-evenly;
+    text-align: center;
     background-color: #27ae60;
     padding: 12px 24px;
     color: white;
@@ -86,3 +92,16 @@ body {
     background-color: #219a52;
   }
   
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+  }
+  
+  th, td {
+    padding: 5px;
+    text-align: center;
+  }

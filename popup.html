@@ -11,16 +11,30 @@
       <button id="jokeGenButton">Generate Joke</button>
       <div class="joke-container" data-container="1"></div>
       <button class="button" id="textCopy">Copy Joke</button>
-      <button class="button" id="close">Go Back to Menu</button>
+      <button class="button" id="close">Back</button>
     </div>
     <div class="container">
       <button id="klipbordButton">Klipboard</button>
-      <!-- <button class="button" data-container="1">Generate Joke</button> -->
-      <div class="klipboard-container" data-container="1"></div>
-      <button class="button" data-container="1">Copy Joke</button>
-      <button class="button" data-container="1">Go Back to Menu</button>
+      <div class="klipboard-container">
+        <table>
+          <tr>
+            <th>Key</th>
+            <th>Value</th>
+          </tr>
+          <tr>
+            <td><input type="text" id="keyInput" /></td>
+            <td><input type="text" id="valueInput" /></td>
+          </tr>
+        </table>
+        > <button id="saveButton">Save</button>
+      </div>
+      <button class="button" data-container="1">Back</button>
+    </div>
+    <div class="container">
+      <button id="prettyJsonButton">JSON parser</button>
     </div>
   </body>
   <script src="jokeGen.js"></script>
   <script src="klipboard.js"></script>
+  <script src="JsonParser/jsonParser.js"></script>
 </html>
