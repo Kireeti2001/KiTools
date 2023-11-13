@@ -15,6 +15,9 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 
   let totalLength = 0;
   let maxLength = 0;
+  const lines = text.split(/\r\n|\r|\n/).filter(Boolean);
+  const sentences = text.split(/[.!?]/).filter(Boolean);
+  const paragraphs = text.split(/\n\s*\n/).filter(Boolean);
   for (let i = 0; i < wordCount; i++) {
     const curLength = words[i].replace(
       /[.,?!()<>{}[\]/\\+=~'`|:;]/g,
@@ -26,23 +29,23 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     }
   }
   const avgLength = wordCount === 0 ? 0 : totalLength / wordCount;
-
   const numAverageDigits = 2;
-  const displayString = `Word Count: ${wordCount}
+  const displayString = `
+  Text : ${text}
   Character Count: ${charCount}
+  Word Count: ${wordCount}
+  Line Count : ${lines.length}
+  Sentence Count : ${sentences.length}
+  Paragraph Count : ${paragraphs.length}
   Average Word Length: ${avgLength.toFixed(numAverageDigits)}
-  Longest Word Length: ${maxLength}`;
-  const notificationOptions = {
+  Longest Word Length: ${maxLength}
+  `;
+
+  chrome.notifications.create("wordCounterNotification", {
     type: "basic",
-    title: "notification title",
-    message: displayString,
-    priority: 2,
-  };
-  chrome.notifications.create("Notification", {
-    type: "basic",
-    title: "notification title",
+    iconUrl: "logo.png",
+    title: "KiTools : Word Counter",
     message: displayString,
   });
-  chrome.contextMenus.send;
   console.log(displayString);
 });

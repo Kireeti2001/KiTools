@@ -1,107 +1,129 @@
 /* Styles for the entire page */
 body {
-    font-family: 'Helvetica Neue', sans-serif;
-    text-align: center;
-    background-color: #f8f8f8;
-    margin: 0;
-    padding: 0;
-    width:400px;
-    height:300px;
+  font-family: "Helvetica Neue", sans-serif;
+  text-align: center;
+  background-color: #1a1717;
+  margin: 0;
+  padding: 0;
+  width: 450px;
+  height: 300px;
+}
+
+/* Styles for the individual containers */
+.container {
+  background-color: #1d1c1c6f;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.container:hover {
+  transform: scale(1.05);
+}
+/* Styles for the joke container */
+.joke-container,
+.klipboard-container {
+  display: none;
+  background-color: #ffffff;
+  border: 1px solid #bdc3c7;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+/* Styles for the "Copy Joke" and "Go Back to Menu" buttons */
+.button {
+  align-items: center;
+  text-align: center;
+  padding: 12px 24px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+  margin: 10px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #c0392b;
+}
+
+/* Styles for the "Generate Joke" button */
+#jokeGenButton,
+#klipbordButton,
+#prettyJsonButton {
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  padding: 12px 24px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#jokeGenButton:hover,
+#klipbordButton,
+#prettyJsonButton {
+  background-color: #2980b9;
+}
+
+/* Animation for fading in the joke container */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  
-  /* Styles for the individual containers */
-  .container {
-    background-color: #ffffff;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Styles for the "Generate Joke" button */
-  #jokeGenButton , #klipbordButton, #prettyJsonButton{
-    padding: 12px 24px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  #jokeGenButton:hover ,#klipbordButton , #prettyJsonButton{
-    background-color: #2980b9;
-  }
-  
-  /* Styles for the "Copy Joke" and "Go Back to Menu" buttons */
-  .button {
-    align-items: center;
-    text-align: center;
-    padding: 12px 24px;
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: none;
-    margin: 10px;
-    transition: background-color 0.3s;
-  }
-  
-  .button:hover {
-    background-color: #c0392b;
-  }
-  
-  /* Styles for the joke container */
-  .joke-container , .klipboard-container{
-    display: none;
-    background-color: #ffffff;
-    border: 1px solid #bdc3c7;
-    border-radius: 10px;
-    padding: 20px;
-    margin-top: 20px;
-    animation: fadeIn 1s ease-in-out forwards;
-  }
-  
-  /* Animation for fading in the joke container */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Additional modern styling for buttons */
-  #textCopy, #close {
-    align-content: space-evenly;
-    text-align: center;
-    background-color: #27ae60;
-    padding: 12px 24px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  #textCopy:hover, #close:hover {
-    background-color: #219a52;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  table, th, td {
-    border: 1px solid black;
-  }
-  
-  th, td {
-    padding: 5px;
-    text-align: center;
-  }
+}
+
+/* Additional modern styling for buttons */
+#textCopy,
+#close {
+  align-content: space-evenly;
+  text-align: center;
+  background-color: #27ae60;
+  padding: 12px 24px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#textCopy:hover,
+#close:hover {
+  background-color: #219a52;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: center;
+}
