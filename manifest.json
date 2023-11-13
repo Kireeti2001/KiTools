@@ -24,6 +24,6 @@
     }
   ],
   "background": {
-    "service_worker": "wordCounter.js"
+    "service_worker": "js/wordCounter.js"
   }
 }

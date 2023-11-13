@@ -8,6 +8,20 @@
   </head>
   <body>
     <div class="container">
+      <button id="notesButton">Take Notes</button>
+      <div class="notes-container">
+        <h2>Notes</h2>
+        <textarea
+          id="noteText"
+          placeholder="Enter your note in markdown"
+        ></textarea>
+        <button id="saveNote">Save Note</button>
+        <div id="noteList">
+          <!-- Display list of notes here -->
+        </div>
+      </div>
+    </div>
+    <div class="container">
       <button id="jokeGenButton">Generate Joke</button>
       <div class="joke-container" data-container="1"></div>
       <button class="button" id="textCopy">Copy Joke</button>
@@ -34,7 +48,7 @@
       <button id="prettyJsonButton">JSON parser</button>
     </div>
   </body>
-  <script src="jokeGen.js"></script>
-  <script src="klipboard.js"></script>
-  <script src="JsonParser/jsonParser.js"></script>
+  <script src="js/jokeGen.js"></script>
+  <script src="js/klipboard.js"></script>
+  <script src="js/JsonParser/jsonParser.js"></script>
 </html>

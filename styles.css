@@ -5,15 +5,13 @@ body {
   background-color: #1a1717;
   margin: 0;
   padding: 0;
-  width: 450px;
-  height: 300px;
+  display: flex;
 }
 
 /* Styles for the individual containers */
 .container {
   background-color: #1d1c1c6f;
   padding: 20px;
-  margin: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -22,7 +20,8 @@ body {
 }
 /* Styles for the joke container */
 .joke-container,
-.klipboard-container {
+.klipboard-container,
+.notes-container {
   display: none;
   background-color: #ffffff;
   border: 1px solid #bdc3c7;
@@ -54,7 +53,8 @@ body {
 /* Styles for the "Generate Joke" button */
 #jokeGenButton,
 #klipbordButton,
-#prettyJsonButton {
+#prettyJsonButton,
+#notesButton {
   align-items: center;
   text-align: center;
   margin: auto;
@@ -69,7 +69,8 @@ body {
 
 #jokeGenButton:hover,
 #klipbordButton,
-#prettyJsonButton {
+#prettyJsonButton,
+#notesButton {
   background-color: #2980b9;
 }
 
